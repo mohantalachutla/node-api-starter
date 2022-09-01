@@ -14,8 +14,10 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.json'], //extensions to resolve
     modules: ['node_modules'], // to specify external modules
+    alias: {
+      httpClient: '../src/httpClient.js',
+    },
     // fallback: {},
-    // alias: {},
     // enforceExtension: true
   },
   module: {
