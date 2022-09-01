@@ -10,7 +10,8 @@
     "build:sit": "cros-env NODE_ENV=sit webpack --config ./webpack/webpack.config.js --env NODE_ENV=sit",
     "lint": "eslint --fix 'src/**/*.{js,json}'",
     "format": "prettier --write './(src|webpack)?/**/*.{js,json}'",
-    "test": "npm run start && jest",
+    "test": "jest",
+    "test:coverage": "jest --coverage --colors --no-cache --maxWorkers=10",
     "test:watch": "jest --watchAll"
   },
   "keywords": [],
@@ -22,6 +23,7 @@
     "@babel/eslint-parser": "^7.18.9",
     "@babel/preset-env": "^7.18.10",
     "@babel/register": "^7.18.9",
+    "babel-jest": "^29.0.1",
     "babel-loader": "^8.2.5",
     "babel-watch": "^7.7.0",
     "corejs": "^1.0.0",
@@ -65,8 +67,7 @@
       "eslint --fix"
     ],
     "./(src|webpack)?/**/*.{js,json}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "./src/**/*.js": [
       "jest --bail --findRelatedTests --passWithNoTests"

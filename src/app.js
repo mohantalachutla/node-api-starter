@@ -6,7 +6,7 @@ import esession from 'express-session'
 import * as _ from 'lodash'
 
 import { corsOptions } from './config'
-import routes from './route'
+import routes from './controller'
 
 const app = express()
 
