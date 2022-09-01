@@ -10,7 +10,7 @@
     "build:sit": "cros-env NODE_ENV=sit webpack --config ./webpack/webpack.config.js --env NODE_ENV=sit",
     "lint": "eslint --fix 'src/**/*.{js,json}'",
     "format": "prettier --write './(src|webpack)?/**/*.{js,json}'",
-    "test": "jest",
+    "test": "npm run start && jest",
     "test:watch": "jest --watchAll"
   },
   "keywords": [],
