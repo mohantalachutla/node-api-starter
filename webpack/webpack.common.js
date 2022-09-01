@@ -5,9 +5,15 @@ module.exports = {
   entry: {
     bundle: path.resolve(__dirname, '..', './src/index.js'),
   },
+  output: {
+    path: path.resolve(__dirname, '..', 'build'),
+    filename: '[name].js',
+    assetModuleFilename: '[name][ext]',
+    publicPath: '',
+  },
   resolve: {
     extensions: ['.js', '.ts', '.json'], //extensions to resolve
-    modules: [path.resolve(__dirname, 'src'), 'node_modules'], // to specify external modules
+    modules: ['node_modules'], // to specify external modules
     // fallback: {},
     // alias: {},
     // enforceExtension: true
@@ -33,5 +39,15 @@ module.exports = {
       },
     ],
   },
-  target: 'node14',
+  target: 'node',
+  externalsType: 'global',
+  externals: {
+    express: 'commonjs express',
+    'express-formidable': 'commonjs express-formidable',
+    'terser-webpack-plugin': 'commonjs terser-webpack-plugin',
+    webpack: 'commonjs webpack',
+    lodash: ['commonjs lodash', '_'],
+  },
+  stats: 'errors-warnings',
+  // stats: 'detailed',
 }
