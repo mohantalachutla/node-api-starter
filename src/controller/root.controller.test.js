@@ -1,8 +1,8 @@
-// eslint-disable-next-line import/no-unresolved
-import http from '../httpClient'
 import dotenv from 'dotenv'
 import dotenvExpand from 'dotenv-expand'
 dotenvExpand.expand(dotenv.config())
+
+import http from '../http'
 
 const appName = process.env.APP_NAME
 const host = process.env.HOST

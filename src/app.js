@@ -1,4 +1,3 @@
-import express from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
 import eformidable from 'express-formidable'
@@ -7,8 +6,7 @@ import * as _ from 'lodash'
 
 import { corsOptions } from './config'
 import routes from './controller'
-
-const app = express()
+import app from './inject'
 
 // Express configuration in Use
 app.use(cors(corsOptions))

@@ -13,9 +13,14 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.ts', '.json'], //extensions to resolve
-    modules: ['node_modules'], // to specify external modules
+    modules: [
+      path.resolve(__dirname, '..', 'src/**'),
+      path.resolve(__dirname, '..', 'node_modules'),
+    ], // to specify external modules //ancestors won't be seached with absolute path
     alias: {
-      httpClient: '../src/httpClient.js',
+      APP: path.resolve(__dirname, '..', 'src/'),
+      '@http$': path.resolve(__dirname, '..', 'src/http.js'),
+      '@logger$': path.resolve(__dirname, '..', 'src/logger.js'),
     },
     // fallback: {},
     // enforceExtension: true
@@ -49,6 +54,7 @@ module.exports = {
     'terser-webpack-plugin': 'commonjs terser-webpack-plugin',
     webpack: 'commonjs webpack',
     lodash: ['commonjs lodash', '_'],
+    '@babel/core': ['commonjs @babel/core'],
   },
   stats: 'errors-warnings',
   // stats: 'detailed',

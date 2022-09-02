@@ -5,6 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "start": "cross-env NODE_ENV=development node ./src/index.js",
+    "start:webpack": "cross-env NODE_ENV=development webpack serve --config ./webpack/webpack.config.js",
     "build": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.js --env NODE_ENV=prod",
     "build:prod": "cros-env NODE_ENV=production webpack --config ./webpack/webpack.config.js --env NODE_ENV=prod",
     "build:sit": "cros-env NODE_ENV=sit webpack --config ./webpack/webpack.config.js --env NODE_ENV=sit",
@@ -30,6 +31,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gulp": "^4.0.2",
@@ -60,6 +62,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
     "morgan": "^1.10.0",
+    "sequelize": "^6.21.4",
     "uuid": "^8.3.2"
   },
   "lint-staged": {

@@ -22,4 +22,9 @@ module.exports = {
   transform: {
     '\\.js': 'babel-jest',
   },
+  moduleNameMapper: {
+    'APP/*': './src/*',
+    '@http': './src/http.js',
+    '@logger': './src/logger.js',
+  },
 }
